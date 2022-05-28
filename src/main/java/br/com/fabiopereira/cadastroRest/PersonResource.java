@@ -45,7 +45,27 @@ public class PersonResource {
             return new ResponseEntity<Optional<Person>>(HttpStatus.NOT_FOUND);
         }
 
+    }
 
+    @DeleteMapping(path="/{id}")
+    public ResponseEntity<Optional<Person>> deleteById(@PathVariable Integer id){
+        try {
+            personRepository.deleteById(id);
+            return new ResponseEntity<Optional<Person>>( HttpStatus.OK);
+        }catch(NoSuchElementException nsee){
+            return new ResponseEntity<Optional<Person>>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping(path="/{id}")
+    public ResponseEntity<Person> update(@PathVariable Integer id, @RequestBody Person newPerson){
+        return personRepository.findById(id)
+                .map(person -> {
+                    person.setName(newPerson.getName());
+                    person.setAge(newPerson.getAge());
+                    Person personUpdated = personRepository.save(person);
+                    return ResponseEntity.ok().body(personUpdated);
+                }).orElse(ResponseEntity.notFound().build());
     }
 
 
