@@ -1,4 +1,4 @@
-package br.com.fabiopereira.cadastroRest;
+package br.com.fabiopereira.cadastroRest.resources;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

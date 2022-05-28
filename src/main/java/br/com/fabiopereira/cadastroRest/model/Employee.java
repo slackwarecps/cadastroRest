@@ -1,4 +1,4 @@
-package br.com.fabiopereira.cadastroRest;
+package br.com.fabiopereira.cadastroRest.model;
 
 
 import java.util.Objects;

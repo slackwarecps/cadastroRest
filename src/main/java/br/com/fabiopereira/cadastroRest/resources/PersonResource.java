@@ -1,4 +1,4 @@
-package br.com.fabiopereira.cadastroRest;
+package br.com.fabiopereira.cadastroRest.resources;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import br.com.fabiopereira.cadastroRest.model.Person;
+import br.com.fabiopereira.cadastroRest.repositories.PersonRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

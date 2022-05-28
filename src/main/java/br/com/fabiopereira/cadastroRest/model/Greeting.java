@@ -1,4 +1,4 @@
-package br.com.fabiopereira.cadastroRest;
+package br.com.fabiopereira.cadastroRest.model;
 
 public class Greeting {
     private final long id;

@@ -1,4 +1,4 @@
-package br.com.fabiopereira.cadastroRest;
+package br.com.fabiopereira.cadastroRest.repositories;
 
 import br.com.fabiopereira.cadastroRest.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
