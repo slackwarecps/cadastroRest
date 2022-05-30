@@ -1,5 +1,8 @@
 package br.com.fabiopereira.cadastroRest.model;
 
+import javax.persistence.Entity;
+
+
 public class Greeting {
     private final long id;
     private final String content;

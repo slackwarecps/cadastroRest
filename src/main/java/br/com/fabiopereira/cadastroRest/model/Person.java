@@ -1,15 +1,13 @@
 package br.com.fabiopereira.cadastroRest.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Person {
 
-    @GeneratedValue
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CODIGO", nullable = false)
     private int id;
     @Column(name="name")
     private String name;
