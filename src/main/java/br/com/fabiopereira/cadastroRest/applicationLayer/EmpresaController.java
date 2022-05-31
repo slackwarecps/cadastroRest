@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path="/empresas")
+@RequestMapping(path="/api/empresas")
 public class EmpresaController {
 
     private EmpresaRepository empresaRepository;
