@@ -51,6 +51,11 @@ public class VendaResource {
 
     @GetMapping
     public ResponseEntity<List<Venda>> getAll(){
+        logger.info("This is a simple message at INFO level. " +
+                "It will be hidden.");
+        logger.error("This is a simple message at ERROR level. " +
+                "This is the minimum visible level.");
+
         List<Venda> vendas = new ArrayList<>();
         vendas = vendaRepository.findAll();
         return new ResponseEntity<>(vendas,HttpStatus.OK);
