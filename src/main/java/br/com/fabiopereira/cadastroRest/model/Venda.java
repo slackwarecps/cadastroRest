@@ -75,5 +75,16 @@ public class Venda {
         this.status = status;
     }
 
-
+    @Override
+    public String toString() {
+        return "Venda{" +
+                "venda_id=" + venda_id +
+                ", produto_id=" + produto_id +
+                ", created=" + created +
+                ", qtd=" + qtd +
+                ", nome='" + nome + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }
