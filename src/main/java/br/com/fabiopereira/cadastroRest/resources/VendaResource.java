@@ -7,6 +7,7 @@ import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping(path="/venda")
 public class VendaResource {
-
+    public static String CORRELATION_ID = "correlation_id";
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -59,7 +60,7 @@ public class VendaResource {
     @PostMapping(path="/autenticaErro")
     public ResponseEntity<Object> autenticacaoErro() {
         authUserErrors.increment();
-        logger.info("usuario com erro de autenticação fake... ");
+        logger.error("usuario com erro de autenticação fake... ");
         return ResponseEntity.badRequest().build();
     }
 
@@ -78,10 +79,9 @@ public class VendaResource {
 
     @GetMapping
     public ResponseEntity<List<Venda>> getAll(){
+        MDC.put(CORRELATION_ID,"123");
         logger.trace("BUSCOU TODOS OS REGISTROS");
-        logger.debug("BUSCOU TODOS OS REGISTROS");
-        logger.info("BUSCOU TODOS OS REGISTROS");
-        logger.warn("BUSCOU TODOS OS REGISTROS");
+
 
 
         List<Venda> vendas = new ArrayList<>();
